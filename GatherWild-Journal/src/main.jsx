@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import LoginPage from "./features/auth/LoginPage";
+import SignupPage from "@/features/auth/SignupPage";
+import DashboardPage from "@/features/journal/DashboardPage";
+import CreateEntryPage from "@/features/journal/CreateEntryPage";
+import EditEntryPage from "@/features/journal/EditEntryPage";
 
 import {
     createBrowserRouter,
@@ -9,8 +14,34 @@ import {
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <h1>Wildcraft Journal</h1>,
+        element: <LoginPage />, // *** CHANGE ****
     },
+    {
+        path: "/login",
+        element: <LoginPage />,
+    },
+    {
+        path: "/signup",
+        element: <SignupPage />,
+    },
+    {
+        path: "/dashbpard",
+        element: <DashboardPage />,
+    },
+    {
+        path: "/entries",
+        element: <CreateEntryPage />,
+    },
+    {
+        path: "/entries/:id",
+        element: <EditEntryPage />,
+    },
+    {
+        path: "/entries/:id/edit ",
+        element: <EditEntryPage />,
+    },
+
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
