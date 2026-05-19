@@ -3,6 +3,7 @@ Supabase logic
 */
 import { supabase } from "@/lib/supabase";
 
+
 export async function createEntry(entryData) {
     const {
         data: { user },
@@ -12,7 +13,7 @@ export async function createEntry(entryData) {
         .from("journal_entries")
         .insert([
             {
-                ...entryData,
+                entryData,
                 user_id: user.id,
             },
         ]);

@@ -1,9 +1,3 @@
-function App() {
-    return (
-        <div>
-            <h1>Wildcraft Journal</h1>
-        </div>
-    );
+export default function App() {
+    return null; // add navbar, footer, page container
 }
-
-export default App;

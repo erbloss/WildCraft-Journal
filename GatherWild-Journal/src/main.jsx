@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 import LoginPage from "./features/auth/LoginPage";
 import SignupPage from "@/features/auth/SignupPage";
 import DashboardPage from "@/features/journal/DashboardPage";

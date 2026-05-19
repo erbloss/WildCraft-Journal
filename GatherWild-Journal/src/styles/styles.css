@@ -1,0 +1,25 @@
+.color-palette {
+    color: antiquewhite;
+    color: #F1F3E0;
+    color: #D2DCB6;
+    color: #A1BC98;
+    color: #778873;
+    color: #0A400C;
+    color: #CA7842;
+}
+
+/* FONTS -------------------------------*/
+.amarante-regular {
+    font-family: "Amarante", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* MORE  */

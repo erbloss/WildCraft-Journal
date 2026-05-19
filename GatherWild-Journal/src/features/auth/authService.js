@@ -1,7 +1,7 @@
 import { supabase } from "@/lib/supabase";
 
 export async function signUp(email, password) {
-    return await supabase.auth.signup({
+    return await supabase.auth.signUp({
         email, password,
     });
 }
