@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { signIn } from "./authService.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -20,14 +21,17 @@ export default function LoginPage() {
         if (error) {
             setMessage(`Error: ${error.message}`);
         } else {
-            setMessage("Signed in successfully!");
+            alert("Signed in successfully!");
+
+            // go to dashboard of entries upon successful submission
+            navigate("/entries", { replace: true });
         }
     }
 
     return (
         <div className="container mt-5" style={{ maxWidth: "400px" }}>
-            <h1>WildCraft Journal</h1>
-            <p>Your digital field journal.</p>
+            <h1>GatherWild Journal</h1>
+            <h3>Your digital foraging journal.</h3>
 
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">

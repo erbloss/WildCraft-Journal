@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signUp } from "./authService.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignupPage() {
     const [email, setEmail] = useState("");
@@ -8,6 +8,8 @@ export default function SignupPage() {
 
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
+
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -21,7 +23,10 @@ export default function SignupPage() {
         if (error) {
             setMessage(`Error: ${error.message}`);
         } else {
-            setMessage("Sign-up successful! Check your email to confirm your account.");
+            alert("Sign-up successful!");
+
+            // go to login page upon successful submission
+            navigate("/login", { replace: true });
         }
     }
 

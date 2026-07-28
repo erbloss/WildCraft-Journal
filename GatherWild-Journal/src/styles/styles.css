@@ -23,3 +23,146 @@
 }
 
 /* MORE  */
+body {
+    background-color: #a1bc98fd;
+    color: #0A400C;
+}
+
+h1 {
+    font-family: "Amarante";
+}
+
+h2 {
+    font-family: "Quicksand";
+
+}
+
+h3 {
+    font-family: "Quicksand";
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    padding: 10px;
+    margin: 3px;
+    font-family: "Quicksand";
+}
+
+input:hover {
+    background-color: rgba(255, 255, 255, 0.582);
+}
+
+input::placeholder {
+    color: #596556;
+    font-family: "Quicksand";
+}
+
+input::file-selector-button {
+    background-color: #778873;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 8px;
+    width: 25%;
+}
+
+input::file-selector-button:hover {
+    background-color: #596556;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    border-radius: 8px;
+    border: none;
+    background-color: #0a400c;
+    color: white;
+    margin: 3px;
+    padding: 10px;
+    font-family: "Amarante";
+    font-size: larger;
+    font-weight: bold;
+    letter-spacing: 5px;
+    min-width: 100px;
+}
+
+button:hover {
+    background-color: #031804;
+}
+
+form {
+    font-family: "Quicksand";
+    padding: 10px;
+    margin: 20px auto;
+    background-color: rgba(250, 235, 215, 0.226);
+    border-radius: 8px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    margin: 5px;
+}
+
+/* NAVBAR ----------*/
+.companyName-img {
+    height: 130px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.banner-background {
+    background-image: url("../assets/images/companyName.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    background-color: white;
+    border-radius: 8px;
+    height: 40vh;
+    margin: 0px;
+    padding: 0px;
+    opacity: 70%;
+}
+
+.topnav {
+    background-color: #D2DCB6;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    margin: 15px;
+}
+
+.topnav a {
+    float: right;
+    color: #596556;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 8px;
+}
+
+.topnav a:hover {
+    background-color: white;
+}
+
+.topnav a.active {
+    background-color: #ca7842bd;
+    color: white;
+}
+
+.topnav a.active:hover {
+    background-color: #ca784281;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./styles/styles.css";
 
 import LoginPage from "./features/auth/LoginPage";
 import SignupPage from "@/features/auth/SignupPage";
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         element: <SignupPage />,
     },
     {
-        path: "/dashbpard",
+        path: "/dashboard",
         element: <DashboardPage />,
     },
     {
