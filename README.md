@@ -1,4 +1,4 @@
-# 🌿 GatherWild Journal
+# 🌿 WildCraft Journal
 
 A full-stack foraging journal built with **React**, **Vite**, and **Supabase** that allows users to securely document and organize their wild food discoveries.
 
