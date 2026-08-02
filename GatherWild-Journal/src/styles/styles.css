@@ -89,7 +89,8 @@ label {
     color: white;
 }
 
-button {
+button,
+.button {
     border-radius: 8px;
     border: none;
     background-color: #ca7842bd;
@@ -107,7 +108,8 @@ button {
 
 }
 
-button:hover {
+button:hover,
+.button:hover {
     background-color: #031804;
 }
 
@@ -139,6 +141,15 @@ form {
     align-items: center;
 }
 
+.text-right {
+    text-align: right;
+    color: #778873;
+}
+
+.text-capitalized {
+    text-transform: capitalize;
+}
+
 .mt-3 {
     margin-top: 3px;
 }
@@ -153,4 +164,28 @@ body,
 #root {
     height: 100%;
     margin: 0;
+}
+
+
+/* JOURNAL --------- */
+.journal-grid {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+}
+
+.journal-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.journal-grid::-webkit-scrollbar-thumb {
+    background: #8a8a8a;
+    border-radius: 4px;
+}
+
+.journal-grid::-webkit-scrollbar-track {
+    background: transparent;
 }
