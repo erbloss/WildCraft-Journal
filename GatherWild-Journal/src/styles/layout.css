@@ -1,6 +1,6 @@
 .page-container {
     min-height: 100vh;
-
+    width: 100%;
     display: flex;
     flex-direction: column;
 
@@ -103,7 +103,7 @@
     text-align: center;
     width: 100%;
     color: #D2DCB6;
-    background-color: #0A400C;
+    background-color: #181610;
     position: relative;
     height: 3rem;
     bottom: 0;

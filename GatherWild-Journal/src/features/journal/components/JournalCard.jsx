@@ -1,22 +1,21 @@
 import { Link } from "react-router-dom";
 
 import "../../../styles/journalCard.css";
+import defaultImage from "../../../assets/images/leaf.png";
 
 export default function JournalCard({ entry }) {
     return (
         <article className="journal-card">
 
-            {entry.image_url && (
-                <img
-                    className="journal-card-image"
-                    src={entry.image_url}
-                    alt={entry.species_found}
-                />
-            )}
+            <img
+                className="journal-card-img"
+                src={entry.image_url || defaultImage}
+                alt={entry.species_found}
+            />
 
             <div className="journal-card-content">
 
-                <h2 className="text-centered text-capitalized">{entry.species_found}</h2>
+                <h2 className="text-centered text-capitalized entry-species">{entry.species_found}</h2>
 
                 <p>
                     <strong>Date Found:</strong>{" "}
@@ -41,7 +40,7 @@ export default function JournalCard({ entry }) {
                 </Link>
 
                 <p className="text-right">
-                    <small>Entry created:{" "}
+                    <small>Entry created{" "}
                         {new Date(entry.created_at).toLocaleDateString()}
                     </small>
                 </p>

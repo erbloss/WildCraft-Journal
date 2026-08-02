@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { createEntry, getUserID } from "./journalService";
 import { supabase } from "../../lib/supabase";
 import { SupabaseClient } from "@supabase/supabase-js";
+import InputPredictor from "./components/InputPredictor";
 
 export default function CreateEntryPage() {
     const [location_name, setLocation] = useState("");
@@ -14,10 +15,9 @@ export default function CreateEntryPage() {
     const [weather, setWeather] = useState("");
     const [species_found, setSpeciesFound] = useState("");
     const [image_url, setImageURL] = useState(null);
-
     const [message, setMessage] = useState("");
-
     const navigate = useNavigate();
+    const species_predictor = InputPredictor();
 
 
     // determine if input is in decimal degree format 'XXX.XXXXXXXX'
@@ -117,14 +117,12 @@ export default function CreateEntryPage() {
         <div className="container-centered">
             <h1>Log a New Journal Entry</h1>
             <form onSubmit={handleSubmit}>
+
                 <div className="form-row">
                     <label>Species Found: </label>
-                    <input
-                        type="text"
-                        placeholder="i.e., morel, ramps"
+                    <InputPredictor
                         value={species_found}
-                        onChange={(e) => setSpeciesFound(e.target.value)}
-                        required
+                        onChange={setSpeciesFound}
                     />
                 </div>
 
@@ -146,7 +144,6 @@ export default function CreateEntryPage() {
                         placeholder="i.e., cold, rainy..."
                         value={weather}
                         onChange={(e) => setWeather(e.target.value)}
-                        required
                     />
                 </div>
 
@@ -188,7 +185,7 @@ export default function CreateEntryPage() {
                         placeholder="i.e., quantity, nearby species, ..."
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
-                        required
+
                     />
                 </div>
 
