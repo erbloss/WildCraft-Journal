@@ -19,8 +19,9 @@ export default function EditEntryPage() {
 
 
     return (
-        <div>
+        <div className="text-centered">
             <h1>Edit Entry Page</h1>
+            <p>Function to edit existing entries will be added in the future</p>
         </div>
     );
 }

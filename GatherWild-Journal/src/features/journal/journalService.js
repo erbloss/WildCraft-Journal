@@ -34,5 +34,21 @@ export async function getEntry(id) {
 
     return { data, error };
 
-}
+};
+
+export async function getEntries() {
+
+    const {
+        data,
+        error,
+    } = await supabase
+        .from("journal_entries")
+        .select("*")
+        .order("date_found", { ascending: false });
+
+    return {
+        data,
+        error,
+    };
+};
 
