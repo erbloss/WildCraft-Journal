@@ -1,0 +1,156 @@
+.color-palette {
+    color: antiquewhite;
+    color: #F1F3E0;
+    color: #D2DCB6;
+    color: #A1BC98;
+    color: #778873;
+    color: #0A400C;
+    color: #CA7842;
+}
+
+/* FONTS -------------------------------*/
+.amarante-regular {
+    font-family: "Amarante", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* MORE  */
+body {
+    background-color: #a1bc98fd;
+    color: #0A400C;
+}
+
+h1 {
+    font-family: "Amarante";
+    color: #A1BC98;
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Quicksand";
+
+}
+
+h3 {
+    font-family: "Quicksand";
+    color: #c0deb6;
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    padding: 10px;
+    margin: 3px;
+    font-family: "Quicksand";
+}
+
+input:hover {
+    background-color: rgba(255, 255, 255, 0.582);
+}
+
+input::placeholder {
+    color: #596556;
+    font-family: "Quicksand";
+}
+
+input::file-selector-button {
+    background-color: #778873;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 8px;
+    width: 25%;
+}
+
+input::file-selector-button:hover {
+    background-color: #596556;
+}
+
+label {
+    font-weight: bold;
+    color: white;
+}
+
+button {
+    border-radius: 8px;
+    border: none;
+    background-color: #ca7842bd;
+
+    min-width: 100px;
+    margin: 5px;
+    padding: 10px;
+
+    font-family: "Amarante";
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+}
+
+button:hover {
+    background-color: #031804;
+}
+
+form {
+    font-family: "Quicksand";
+    padding: 10px;
+    margin: 20px auto;
+    background-color: rgba(250, 235, 215, 0.226);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    margin: 5px;
+}
+
+.container-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.text-centered {
+    text-align: center;
+    align-items: center;
+}
+
+.mt-3 {
+    margin-top: 3px;
+}
+
+.signout-btn {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}

@@ -1,9 +1,4 @@
-function App() {
-    return (
-        <div>
-            <h1>Wildcraft Journal</h1>
-        </div>
-    );
-}
+export default function App() {
 
-export default App;
+    return null;
+}

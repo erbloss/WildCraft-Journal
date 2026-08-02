@@ -1,63 +1,22 @@
+import { useState } from "react";
+import { getEntry } from "./journalService.js";
 /*
-TEMP ENTRY FORM 
+This page will display the user's most recent 10 journal entries.
+    - entries displayed as cards in album
+Each journal entry may be clicked on to navigate to a page to view/edit that entry.
+User can search by date or species to find past journal entries.
 */
 
-import { useState } from "react";
-import { createEntry } from "./journalService.js";
-
 export default function DashboardPage() {
-    const [title, setTitle] = useState("");
-    const [notes, setNotes] = useState("");
 
-    async function handleSubmit(e) {
-        e.preventDefault();
+    // function to retrieve up to 10 most recent entries
 
-        const { error } = await createEntry({
-            title,
-            notes,
-        });
-
-        if (error) {
-            alert(error.message);
-        } else {
-            alert("Journal entry created!");
-
-            setTitle("");
-            setNotes("");
-        }
-    }
 
     return (
         <div className="container mt-5">
-            <h1>Create Journal Entry</h1>
 
-            <form
-                className="d-flex flex-column gap-3"
-                onSubmit={handleSubmit}
-            >
-                <input
-                    type="text"
-                    placeholder="Entry Title"
-                    className="form-control"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-
-                <textarea
-                    placeholder="Notes"
-                    className="form-control"
-                    rows="5"
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                />
-
-                <button
-                    type="submit"
-                    className="btn btn-success"
-                >
-                    Save Entry
-                </button>
-            </form>
+            <h1>Your Foraging Companion</h1>
+            <h2>~ Explore previous entries here. ~</h2>
         </div>
     );
 }
