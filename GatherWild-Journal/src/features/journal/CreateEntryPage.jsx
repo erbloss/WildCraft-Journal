@@ -114,7 +114,7 @@ export default function CreateEntryPage() {
     };
 
     return (
-        <div>
+        <div className="container-centered">
             <h1>Log a New Journal Entry</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-row">

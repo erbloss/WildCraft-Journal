@@ -31,9 +31,8 @@ export default function SignupPage() {
     }
 
     return (
-        <div className="container mt-5" style={{ maxWidth: "400px" }}>
-            <h1>WildCraft Journal</h1>
-            <p>Create your account.</p>
+        <div className="container mt-5">
+            <h3>New to WildCraft? Create an account here to begin your journal.</h3>
 
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
@@ -62,9 +61,21 @@ export default function SignupPage() {
                     />
                 </div>
 
+                <div className="mb-3">
+                    <label htmlFor="password">Retype Password</label>
+                    <input
+                        id="password"
+                        type="password"
+                        className="form-control"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+
                 <button
                     type="submit"
-                    className="btn btn-success w-100"
                     disabled={loading}
                 >
                     {loading ? "Loading..." : "Sign Up"}

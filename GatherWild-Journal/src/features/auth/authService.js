@@ -13,5 +13,6 @@ export async function signIn(email, password) {
 }
 
 export async function signOut() {
+    console.log("Signing out right now");
     return await supabase.auth.signOut();
 }

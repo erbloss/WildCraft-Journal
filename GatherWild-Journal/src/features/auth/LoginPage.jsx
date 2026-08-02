@@ -29,10 +29,8 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="container mt-5" style={{ maxWidth: "400px" }}>
-            <h1>GatherWild Journal</h1>
-            <h3>Your digital foraging journal.</h3>
 
+        <div className="container mt-5">
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email">Email</label>
@@ -69,7 +67,7 @@ export default function LoginPage() {
                 </button>
             </form>
 
-            <p className="mt-3 text-center">
+            <p className="mt-3 text-centered">
                 Don't have an account?{" "}
                 <Link to="/signup">Sign Up</Link>
             </p>

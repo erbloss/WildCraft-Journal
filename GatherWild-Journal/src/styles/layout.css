@@ -1,0 +1,112 @@
+.page-container {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.page-content {
+    flex: 1;
+}
+
+.background-wrap {
+    position: relative;
+
+}
+
+.soil-background {
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    min-height: 600px;
+}
+
+.content-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* NAVBAR ----------*/
+.topnnav-container {
+    position: relative;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.topnav-container.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.companyName-img {
+    height: 130px;
+    width: auto;
+}
+
+.banner-background {
+    background-image: url("../assets/images/logo.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    background-color: white;
+    height: 25vh;
+    min-height: 190px;
+    margin: 0px;
+    padding: 0px;
+    opacity: 80%;
+}
+
+.topnav {
+    background-color: #D2DCB6;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px 0px 10px 0px;
+}
+
+.topnav a {
+    float: right;
+    color: #596556;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: white;
+}
+
+.topnav a.active {
+    background-color: #ca7842bd;
+    color: white;
+}
+
+.topnav a.active:hover {
+    background-color: #0A400C;
+}
+
+/* FOOTER ------------ */
+.footer {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    color: #D2DCB6;
+    background-color: #0A400C;
+    position: relative;
+    height: 3rem;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+}

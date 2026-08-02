@@ -30,6 +30,10 @@ body {
 
 h1 {
     font-family: "Amarante";
+    color: #A1BC98;
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-align: center;
 }
 
 h2 {
@@ -39,6 +43,7 @@ h2 {
 
 h3 {
     font-family: "Quicksand";
+    color: #c0deb6;
 }
 
 p {
@@ -81,20 +86,25 @@ input::file-selector-button:hover {
 
 label {
     font-weight: bold;
+    color: white;
 }
 
 button {
     border-radius: 8px;
     border: none;
-    background-color: #0a400c;
-    color: white;
-    margin: 3px;
+    background-color: #ca7842bd;
+
+    min-width: 100px;
+    margin: 5px;
     padding: 10px;
+
     font-family: "Amarante";
+    color: white;
     font-size: larger;
     font-weight: bold;
     letter-spacing: 5px;
-    min-width: 100px;
+    text-transform: uppercase;
+
 }
 
 button:hover {
@@ -107,7 +117,8 @@ form {
     margin: 20px auto;
     background-color: rgba(250, 235, 215, 0.226);
     border-radius: 8px;
-    max-width: 500px;
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -116,53 +127,30 @@ form {
     margin: 5px;
 }
 
-/* NAVBAR ----------*/
-.companyName-img {
-    height: 130px;
-    width: auto;
-    border-radius: 8px;
+.container-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
 }
 
-.banner-background {
-    background-image: url("../assets/images/companyName.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
-    background-color: white;
-    border-radius: 8px;
-    height: 40vh;
-    margin: 0px;
-    padding: 0px;
-    opacity: 70%;
-}
-
-.topnav {
-    background-color: #D2DCB6;
-    overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 8px;
-    margin: 15px;
-}
-
-.topnav a {
-    float: right;
-    color: #596556;
+.text-centered {
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    border-radius: 8px;
+    align-items: center;
 }
 
-.topnav a:hover {
-    background-color: white;
+.mt-3 {
+    margin-top: 3px;
 }
 
-.topnav a.active {
-    background-color: #ca7842bd;
-    color: white;
+.signout-btn {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px;
 }
 
-.topnav a.active:hover {
-    background-color: #ca784281;
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
 }
