@@ -9,10 +9,10 @@ Users can create an account, log in securely, record foraging observations, uplo
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](../screenshots/dashboard.png)
 
 ### Create Journal Entry
-![Create Entry](./screenshots/create-entry.png)
+![Create Entry](../screenshots/create-entry.png)
 
 ---
 
