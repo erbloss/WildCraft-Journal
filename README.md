@@ -1,4 +1,4 @@
-# 🌿 GatherWild Journal
+# 🌿 WildCraft Journal
 
 A full-stack foraging journal built with **React**, **Vite**, and **Supabase** that allows users to securely document and organize their wild food discoveries.
 
@@ -9,10 +9,10 @@ Users can create an account, log in securely, record foraging observations, uplo
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](https://github.com/erbloss/WildCraft-Journal/tree/main/GatherWild-Journal/screenshots/dashboard.png)
 
 ### Create Journal Entry
-![Create Entry](./screenshots/create-entry.png)
+![Create Entry](https://github.com/erbloss/WildCraft-Journal/tree/main/GatherWild-Journal/screenshots/create-entry.png)
 
 ---
 
