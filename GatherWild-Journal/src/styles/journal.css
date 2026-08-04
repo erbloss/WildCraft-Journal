@@ -1,0 +1,104 @@
+.journal-card {
+    flex: 0 0 min(90vw, 400px);
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    transition: transform .2s;
+    margin: 15px;
+}
+
+.journal-card:hover {
+    transform: translateY(-4px);
+}
+
+.journal-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.journal-img {
+    max-width: 50%;
+    ;
+}
+
+.journal-card-content {
+    padding: 0 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.journal-card-button {
+    align-self: flex-start;
+    margin-top: auto;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.entry-species {
+    font-family: "Amarante";
+    text-transform: capitalize;
+    margin: 10px 0 0 0;
+    padding: 0px;
+    letter-spacing: 3px;
+}
+
+.journal-grid {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+}
+
+.journal-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.journal-grid::-webkit-scrollbar-thumb {
+    background: #8a8a8a;
+    border-radius: 4px;
+}
+
+.journal-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+form {
+    font-family: "Quicksand";
+    margin: 20px auto;
+    background-color: rgba(250, 235, 215, 0.226);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    margin: 5px;
+    padding: 5px;
+    width: 94%;
+}
+
+.entries-dropdown {
+    padding: 5px;
+    height: 30px;
+    width: 250px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+}
+
+.journal-form {
+    align-items: center;
+    justify-content: center;
+}
+
+.journal-img-container {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

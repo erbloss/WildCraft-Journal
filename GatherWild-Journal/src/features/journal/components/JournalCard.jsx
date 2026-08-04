@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 
-import "../../../styles/journalCard.css";
+import "../../../styles/journal.css";
+
 import defaultImage from "../../../assets/images/leaf.png";
+import locationIcon from "../../../assets/icons/map_ping.svg";
+import foundIcon from "../../../assets/icons/magnifier.svg";
 
 export default function JournalCard({ entry }) {
     return (
@@ -18,14 +21,20 @@ export default function JournalCard({ entry }) {
                 <h2 className="text-centered text-capitalized entry-species">{entry.species_found}</h2>
 
                 <p>
-                    <strong>Date Found:</strong>{" "}
+                    <strong> Date Found:</strong>{" "}
                     {new Date(entry.date).toLocaleDateString()}
                 </p>
 
                 <p className="text-capitalized">
-                    <strong>Location:</strong>{" "}
-                    {entry.location_name} {" ("}
-                    {entry.latitude} {", "} {entry.longitude}{")"}
+                    <strong> Location:</strong>{" "}
+                    {entry.location_name}
+                    <br />
+                    {" ("}{entry.latitude}
+                    {", "} {entry.longitude}{")"}
+                </p>
+
+                <p>
+
                 </p>
 
                 <p className="journal-card-notes">

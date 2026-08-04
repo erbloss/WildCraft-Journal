@@ -24,7 +24,7 @@
 
 /* MORE  */
 body {
-    background-color: #a1bc98fd;
+    background-color: #A1BC98;
     color: #0A400C;
 }
 
@@ -129,27 +129,18 @@ button:hover,
     background-color: #031804;
 }
 
-form {
-    font-family: "Quicksand";
-    padding: 10px;
-    margin: 20px auto;
-    background-color: rgba(250, 235, 215, 0.226);
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
+.button-row {
+    align-items: center;
+    justify-content: center;
     display: flex;
-    flex-direction: column;
-}
-
-.form-row {
-    margin: 5px;
+    margin: 10px;
 }
 
 .container-centered {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 2px;
 }
 
 .text-centered {
@@ -170,6 +161,18 @@ form {
     margin-top: 3px;
 }
 
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
 .signout-btn {
     background-color: rgba(0, 0, 0, 0);
     margin: 0px;
@@ -182,26 +185,24 @@ body,
     margin: 0;
 }
 
+.grouped-area {
+    border-top: #031804 solid 2px;
+    border-bottom: #031804 solid 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
-/* JOURNAL --------- */
-.journal-grid {
+.row {
     display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 1rem 0;
-    scroll-behavior: smooth;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+
 }
 
-.journal-grid::-webkit-scrollbar {
-    height: 8px;
-}
-
-.journal-grid::-webkit-scrollbar-thumb {
-    background: #8a8a8a;
-    border-radius: 4px;
-}
-
-.journal-grid::-webkit-scrollbar-track {
-    background: transparent;
+.col {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 20px;
 }

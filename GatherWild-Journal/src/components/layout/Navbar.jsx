@@ -25,7 +25,7 @@ export default function Navbar() {
                 <div className="topnav">
                     <a className="active" href="/dashboard">Journal Home</a>
                     <a href="/entries">New Entry</a>
-                    <a href="/">Edit Entry</a>
+                    <a href="/edit">Edit Entry</a>
                     <a href="/signout">Sign Out</a>
                 </div>
             </nav>
