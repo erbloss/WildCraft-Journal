@@ -5,7 +5,7 @@ export default function Footer() {
         <section className="footer">
             <footer>
                 <p>
-                    <small>Copyright © 2026 Elizabeth Ryan Bloss -- All rights reserved</small>
+                    <small>Copyright © 2026 Elizabeth Ryan Bloss</small>
                 </p>
             </footer>
         </section>

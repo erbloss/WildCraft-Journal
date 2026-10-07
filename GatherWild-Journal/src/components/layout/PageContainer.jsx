@@ -5,8 +5,7 @@ import Footer from "./Footer";
 
 import "../../styles/layout.css";
 
-import soilTexture from "../../assets/textures/Texturelabs_Soil_128S.jpg"
-import gradientTexture from "../../assets/textures/Texturelabs_Atmosphere_207XL.jpg"
+import soilTexture from "../../assets/textures/Texturelabs_Soil_128S.jpg";
 
 export default function PageContainer() {
     return (

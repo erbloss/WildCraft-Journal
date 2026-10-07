@@ -27,7 +27,6 @@ export default function JournalForm({
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        console.log("INITIAL DATA: ", initialData)
         if (initialData) {
             setSpeciesFound(initialData.species_found || "");
             setDateFound(initialData.date ?

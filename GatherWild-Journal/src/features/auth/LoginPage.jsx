@@ -33,6 +33,7 @@ export default function LoginPage() {
 
     return (
         <div>
+
             <Navbar />
 
             <div className="container mt-5">
@@ -85,7 +86,9 @@ export default function LoginPage() {
                     </div>
                 )}
             </div>
+
             <Footer />
+
         </div>
     );
 }

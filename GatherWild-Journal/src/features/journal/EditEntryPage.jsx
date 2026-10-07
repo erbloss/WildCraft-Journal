@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getEntries, uploadJournalImage, updateEntry, deleteEntry } from "./journalService";
 import { supabase } from "../../lib/supabase";
 import defaultImage from "../../assets/images/leaf.png";
@@ -7,13 +7,16 @@ import JournalForm from "./components/JournalForm";
 import "../../styles/journal.css";
 
 /* 
-This is responsible for updating or deleting existing records
+This is for updating or deleting existing records
 */
+
 export default function EditEntryPage() {
     const [entries, setEntries] = useState([]);
     const [selectedId, setSelectedId] = useState("");
     const [entry, setEntry] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const { id } = useParams();
 
     const navigate = useNavigate();
 
@@ -30,14 +33,32 @@ export default function EditEntryPage() {
         setLoading(false);
     }
 
-    // handle dropdown selection
-    function handleSelect(e) {
-        const id = e.target.value;
-        setSelectedId(id);
+    // handle view/edit button selection from dashboard page here 
+    useEffect(() => {
+        if (!id || entries.length === 0) {
+            return;
+        }
         const selected = entries.find(
             entry => entry.id === id
         );
-        setEntry(selected);
+
+        if (selected) {
+            setSelectedId(id);
+            setEntry(selected);
+        }
+    }, [id, entries]);
+
+
+    // handle dropdown selection
+    function handleSelect(e) {
+        const selectedId = e.target.value;
+        setSelectedId(selectedId);
+
+        const selected = entries.find(
+            entry => entry.id === selectedId
+        );
+
+        setEntry(selected || null);
     }
 
     // handle updating an existing entry
@@ -110,8 +131,8 @@ export default function EditEntryPage() {
                             key={entry.id}
                             value={entry.id}
                         >
-                            {entry.species_found} —{" "}
                             {new Date(entry.created_at).toLocaleDateString()}
+                            —{" "}{entry.species_found}
                         </option>
                     ))}
                 </select>

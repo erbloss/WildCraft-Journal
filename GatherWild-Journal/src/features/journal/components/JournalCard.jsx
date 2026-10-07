@@ -42,7 +42,7 @@ export default function JournalCard({ entry }) {
                 </p>
 
                 <Link
-                    to={`/entries/${entry.id}/edit`}
+                    to={`/edit/${entry.id}`}
                     className="button journal-card-button"
                 >
                     View / Edit
