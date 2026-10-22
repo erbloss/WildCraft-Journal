@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import InputPredictor from "./InputPredictor";
+import SpeciesTypeDropdown from "./SpeciesTypeDrowpdown";
 import "../../../styles/journal.css";
 
 // This file is responsible for displaying fields and validating input. It then returns the form data.
@@ -16,6 +17,8 @@ export default function JournalForm({
 }) {
 
     const [species_found, setSpeciesFound] = useState("");
+    const [species_type, setSpeciesType] = useState("");
+    const [otherValue, setOtherValue] = useState("");
     const [date, setDateFound] = useState("");
     const [location_name, setLocationName] = useState("");
     const [latitude, setLatitude] = useState("");
@@ -26,6 +29,7 @@ export default function JournalForm({
 
     const [message, setMessage] = useState("");
 
+    // fill form if in edit mode for existing entry
     useEffect(() => {
         if (initialData) {
             setSpeciesFound(initialData.species_found || "");
@@ -37,8 +41,36 @@ export default function JournalForm({
             setLongitude(initialData.longitude || "");
             setNotes(initialData.notes || "");
             setWeather(initialData.weather || "");
+            setSpeciesType(initialData.species_type || "");
         }
     }, [initialData]);
+
+
+    function handleSpeciesChange(text) {
+        setSpeciesFound(text);
+        setSpeciesType("");
+        setOtherValue("");
+    }
+
+    // disables the species type dropdown when input selector option is selected and sets species type, species found
+    function handleSpeciesSelect(text) {
+        if (text.food === "Other") {
+            setSpeciesFound("");
+            setOtherValue("");
+            setSpeciesType("Other");
+            return;
+        }
+
+        setSpeciesFound(text.food);
+        setSpeciesType(text.category);
+        setOtherValue("");
+    }
+
+    function handleOtherSpecies(text) {
+        setOtherValue(text);
+        setSpeciesFound(text);
+        setSpeciesType("Other");
+    }
 
     // determine if input is in decimal degree format 'XXX.XXXXXXXX'
     // returns true if correct or null. False if incorrect format.
@@ -66,7 +98,9 @@ export default function JournalForm({
         }
         // return form data
         await onSubmit({
-            species_found,
+            species_found: species_type === "Other" ?
+                otherValue.trim() : species_found,
+            species_type,
             date,
             location_name,
             latitude,
@@ -79,109 +113,121 @@ export default function JournalForm({
 
 
     return (
-        <form onSubmit={handleSubmit} className="journal-form">
+        <div>
+            <form onSubmit={handleSubmit} className="flex-container">
+                <div className="flex-section">
 
-            <div className="form-row">
-                <label>Species Found</label>
+                    <label>Species Found*</label>
+                    <InputPredictor
+                        value={species_type === "Other" ?
+                            "Other" : species_found}
+                        onChange={handleSpeciesChange}
+                        onSelect={handleSpeciesSelect}
+                    />
 
-                <InputPredictor
-                    value={species_found}
-                    onChange={setSpeciesFound}
-                />
-            </div>
+                    {species_type === "Other" && (
+                        <div>
+                            <label htmlFor="other-species">
+                                Species (other)*</label>
+                            <input
+                                id="other-species"
+                                type="text"
+                                value={otherValue}
+                                onChange={(e) => handleOtherSpecies(e.target.value)}
+                                placeholder="Enter other species"
+                                required
+                            />
+                        </div>
+                    )}
 
-            <div className="form-row mb-10">
-                <label>Date Found</label>
+                    <label>Date Found</label>
+                    <input
+                        type="date"
+                        value={date}
+                        onChange={(e) => setDateFound(e.target.value)}
+                        required
+                    />
+                </div>
 
-                <input
-                    type="date"
-                    value={date}
-                    onChange={(e) => setDateFound(e.target.value)}
-                    required
-                />
-            </div>
+                <div className="flex-section">
 
-            <div className="grouped-area mb-10">
-
-                <div className="form-row">
                     <label>Location</label>
-
                     <input
                         type="text"
+                        placeholder="Park name, city, etc."
                         value={location_name}
                         onChange={(e) => setLocationName(e.target.value)}
                     />
-                </div>
-                <div className="form-row">
-                    <label>Latitude <small>(Decimal Degrees)</small>: </label>
+
+                    <label>Latitude, Longitude <small>(Decimal Degrees)</small>: </label>
+                    <div className="flex-container">
+                        <input
+                            type="numeric"
+                            className="lat-long-input"
+                            placeholder="---.--------  latitude"
+                            value={latitude}
+                            onChange={(e) => setLatitude(e.target.value)}
+                        />
+                        <input
+                            type="numeric"
+                            className="lat-long-input"
+                            placeholder="---.--------  longitude"
+                            value={longitude}
+                            onChange={(e) => setLongitude(e.target.value)}
+                        />
+                    </div>
+
+                    <label>Weather</label>
                     <input
-                        type="numeric"
-                        placeholder="---.--------"
-                        value={latitude}
-                        onChange={(e) => setLatitude(e.target.value)}
+                        type="text"
+                        placeholder="Rainy, unusually warm, etc."
+                        value={weather}
+                        onChange={(e) => setWeather(e.target.value)}
                     />
                 </div>
 
-                <div className="form-row">
-                    <label>Longitude <small>(Decimal Degrees)</small>: </label>
-                    <input
-                        type="numeric"
-                        placeholder="---.--------"
-                        value={longitude}
-                        onChange={(e) => setLongitude(e.target.value)}
+                <div className="flex-section">
+
+
+                    <label>Notes</label>
+                    <textarea
+                        type="text"
+                        placeholder="Trail name, harvesting details, recipes ..."
+                        rows={5}
+                        value={notes}
+                        onChange={(e) => setNotes(e.target.value)}
                     />
+
+                    <label>Image</label>
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => setImageFile(e.target.files[0])}
+                    />
+                    <div className="button-row flex-section">
+                        <button
+                            type="submit"
+                            disabled={loading}
+                        >
+                            {loading ? "Saving..." : submitText}
+                        </button>
+
+                        {showDelete && (
+                            <button
+                                type="button"
+                                onClick={onDelete}
+                                className="delete-btn"
+                            > Delete Entry
+                            </button>
+                        )}
+                    </div>
+
                 </div>
+            </form>
+            <p style={{ color: `orange`, padding: `10px` }}>
+                <small>* required field</small></p>
 
-            </div>
 
-            <div className="form-row">
-                <label>Weather</label>
-
-                <input
-                    type="text"
-                    value={weather}
-                    onChange={(e) => setWeather(e.target.value)}
-                />
-            </div>
-
-            <div className="form-row mb-10">
-                <label>Notes</label>
-
-                <input
-                    type="text"
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                />
-            </div>
-
-            <div className="form-row mb-10">
-                <label>Image</label>
-
-                <input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) => setImageFile(e.target.files[0])}
-                />
-            </div>
-
-            <div className="button-row">
-                <button
-                    type="submit"
-                    disabled={loading}
-                >
-                    {loading ? "Saving..." : submitText}
-                </button>
-
-                {showDelete && (
-                    <button
-                        type="button"
-                        onClick={onDelete}
-                        className="delete-btn"
-                    > Delete Entry
-                    </button>
-                )}
-            </div>
-
-        </form>
+        </div>
     );
 }

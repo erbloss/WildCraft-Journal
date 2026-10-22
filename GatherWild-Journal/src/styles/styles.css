@@ -50,8 +50,11 @@ p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-input {
+input,
+select,
+textarea {
     width: 100%;
+    resize: none;
     box-sizing: border-box;
     border-radius: 8px;
     border: none;
@@ -130,7 +133,6 @@ button:hover,
 }
 
 .button-row {
-    align-items: center;
     justify-content: center;
     display: flex;
     margin: 10px;
@@ -185,16 +187,26 @@ body,
     margin: 0;
 }
 
-.grouped-area {
-    border-top: #031804 solid 2px;
-    border-bottom: #031804 solid 2px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.flex-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.flex-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 350px;
+    background-color: rgba(250, 235, 215, 0.226);
 }
 
 .row {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     text-align: center;
 
@@ -209,6 +221,12 @@ body,
 
 .orange-backer {
     background-color: #ca784281;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.white-backer {
+    background-color: white;
     border-radius: 10px;
     padding: 20px;
 }

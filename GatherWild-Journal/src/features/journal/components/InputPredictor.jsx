@@ -5,30 +5,51 @@ import { speciesList } from "../../../assets/data/speciesList";
 
 export default function InputPredictor({
     value = "",
-    onChange = () => { }, } = {}) {
-
-    // Flattened array of commonly foraged foods
-    const foods = Object.values(speciesList).flat();
+    onChange = () => { },
+    onSelect = () => { }, } = {}) {
 
     const [suggestions, setSuggestions] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
+    // SpeciesList asset converted into array of objects
+    const foods = Object.entries(speciesList).flatMap(
+        ([category, species]) => {
+            if (!Array.isArray(species)) {
+                return [];
+            }
+
+            return species.map((food) => ({
+                food, category,
+            }));
+        }
+    );
+
+    // display suggested input selection based on user input
     function handleChange(e) {
         const text = e.target.value;
         onChange(text);
 
         if (!text.trim()) {
             setSuggestions([]);
+            setShowSuggestions(false);
             return;
         }
-        const filtered = foods.filter(food =>
+        const filtered = foods.filter(({ food }) =>
             food.toLowerCase().includes(text.toLowerCase())
         );
         setSuggestions(filtered);
+        setShowSuggestions(true);
     }
 
-    function selectSuggestion(food) {
-        onChange(food);
+    // selection handler
+    function selectSuggestion(suggestion) {
+        onChange(suggestion.food);
+        onSelect(suggestion);
+
         setSuggestions([]);
+        setShowSuggestions(false);
+        //TESTING
+        console.log("TEST selection = ", suggestion);
     }
 
     return (
@@ -37,20 +58,23 @@ export default function InputPredictor({
                 type="text"
                 value={value}
                 onChange={handleChange}
-                placeholder="Species Found"
+                placeholder="What did you find?"
                 autoComplete="off"
             />
 
-            {suggestions.length > 0 && (
+            {showSuggestions && suggestions.length > 0 && (
 
                 <ul className="suggestions">
-                    {suggestions.map(food => (
+                    {suggestions.map(({ food, category }) => (
 
                         <li
-                            key={food}
-                            onMouseDown={() => selectSuggestion(food)}
+                            key={`${category}-${food}`}
+                            onMouseDown={(e) => {
+                                e.preventDefault();
+                                selectSuggestion({ food, category })
+                            }}
                         >
-                            {food}
+                            {food} <small>({category})</small>
                         </li>
                     ))}
                 </ul>

@@ -4,10 +4,10 @@ export default function HomePage() {
     return (
         <div className="container-centered">
             <h1>Welcome to WildCraft Journal!</h1>
-            <h3>Your favorite foraging companion</h3>
+            <h3 className="orange-backer">⋆˙ ⟢ Your favorite foraging companion ⟢ ˙⋆</h3>
 
             <div className="row ">
-                <div className="col orange-backer">
+                <div className="col white-backer">
                     <p>
                         This is the place where you can maintain a record of the wild plants you've encountered.  Whether you're a mushroom hunter, berry picker, herbalist, or just like to get lost in the woods, we're here to keep track of your cool finds!
                     </p>
@@ -24,7 +24,7 @@ export default function HomePage() {
                     </p>
                 </div>
 
-                <div className="col">
+                <div className="col white-backer">
                     <img src={leaf} alt="Leaf image" width="75"></img>
                     <h3>Need help?
                         We got you!</h3>
@@ -32,7 +32,7 @@ export default function HomePage() {
                     <h3>Have suggestions?
                         Let us know!</h3>
 
-                    <p>DISCLAIMER: Never munch on a hunch!!! Please be certain that you have correctly identified the plant/fungus in question before consuming anything found or foraged in the wild.  We are not liable in the event of a misidentification. </p>
+                    <p><strong>DISCLAIMER:</strong> Never munch on a hunch!!! Please be certain that you have correctly identified the plant/fungus in question before consuming anything found or foraged in the wild.  We are not liable in the event of a misidentification. </p>
 
                 </div>
             </div>

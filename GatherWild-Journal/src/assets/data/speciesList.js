@@ -1,6 +1,6 @@
 export const speciesList =
 {
-    "edible_plants": [
+    "Edible Plants": [
         "Dandelion",
         "Stinging Nettle",
         "Purslane",
@@ -73,7 +73,7 @@ export const speciesList =
         "Sweet Potato",
         "Tomato"
     ],
-    "medicinal_herbs": [
+    "Medicinal Herbs": [
         "Yarrow",
         "Mullein",
         "Plantain (medicinal)",
@@ -91,7 +91,7 @@ export const speciesList =
         "Chaga (fungus)",
         "Turkey Tail (fungus)"
     ],
-    "wild_mushrooms_edible": [
+    "Wild Mushrooms, Edible": [
         "Morel",
         "Chanterelle",
         "Black Trumpet",
@@ -101,7 +101,7 @@ export const speciesList =
         "Hen of the Woods (Maitake)",
         "Boletes (non-red-pored)"
     ],
-    "toxic_plants": [
+    "Toxic Plants": [
         "Poison Hemlock",
         "Water Hemlock",
         "Death Camas",
@@ -114,11 +114,14 @@ export const speciesList =
         "Autumn Crocus",
         "Buckeye / Horse Chestnut"
     ],
-    "toxic_mushrooms": [
+    "Toxic Mushrooms": [
         "Death Cap",
         "Destroying Angel",
         "False Morel",
         "Jack-o'-Lantern",
         "Red-pored Boletes"
+    ],
+    "Other": [
+        "Other"
     ]
 };
