@@ -142,6 +142,7 @@ button:hover,
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 2px;
 }
 
@@ -229,4 +230,19 @@ body,
     background-color: white;
     border-radius: 10px;
     padding: 20px;
+}
+
+.preview-img {
+    display: flex;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    border: 1px solid white;
+    margin: 10px 0;
+}
+
+.bordered-form {
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
 }

@@ -29,9 +29,9 @@ export default function SignoutPage() {
     return (
 
         <div className="container-centered">
-            <h3>Are you sure you want to leave?</h3>
+            <h1>Are you sure you want to leave?</h1>
 
-            <form onSubmit={handleSubmit} className="signout-btn">
+            <form onSubmit={handleSubmit} className="button-row">
                 <button
                     type="submit"
                     disabled={loading}

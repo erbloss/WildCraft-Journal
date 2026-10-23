@@ -38,41 +38,43 @@ export default function LoginPage() {
 
             <div className="container mt-5">
                 <h1>Sign In</h1>
-                <h3 className="text-centered">We're happy to have you back.</h3>
+                <h3 className="text-centered">We're happy to see you back!</h3>
                 <form className="bordered-form" onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="email">Email</label>
-                        <input
-                            id="email"
-                            type="email"
-                            className="form-control"
-                            placeholder="you@example.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </div>
+                    <div className="flex-container orange-backer">
+                        <div className="flex-section">
+                            <label htmlFor="email">Email</label>
+                            <input
+                                id="email"
+                                type="email"
+                                className="form-control"
+                                placeholder="you@example.com"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
 
-                    <div className="mb-3">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            id="password"
-                            type="password"
-                            className="form-control"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </div>
+                        <div className="flex-section">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                id="password"
+                                type="password"
+                                className="form-control"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
 
-                    <button
-                        type="submit"
-                        className="btn btn-success w-100"
-                        disabled={loading}
-                    >
-                        {loading ? "Loading..." : "Sign In"}
-                    </button>
+                        <button
+                            type="submit"
+                            className="btn btn-success w-100"
+                            disabled={loading}
+                        >
+                            {loading ? "Loading..." : "Sign In"}
+                        </button>
+                    </div>
                 </form>
 
                 <p className="mt-3 text-centered">

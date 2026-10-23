@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-
+import ImageUploadPreview from "../../../utils/ImageUploadPreview";
 import InputPredictor from "./InputPredictor";
-import SpeciesTypeDropdown from "./SpeciesTypeDrowpdown";
 import "../../../styles/journal.css";
 
 // This file is responsible for displaying fields and validating input. It then returns the form data.
@@ -115,6 +114,8 @@ export default function JournalForm({
     return (
         <div>
             <form onSubmit={handleSubmit} className="flex-container">
+
+                {/* New form section **************************** */}
                 <div className="flex-section">
 
                     <label>Species Found*</label>
@@ -140,7 +141,7 @@ export default function JournalForm({
                         </div>
                     )}
 
-                    <label>Date Found</label>
+                    <label>Date Found*</label>
                     <input
                         type="date"
                         value={date}
@@ -149,6 +150,7 @@ export default function JournalForm({
                     />
                 </div>
 
+                {/* New form section **************************** */}
                 <div className="flex-section">
 
                     <label>Location</label>
@@ -186,9 +188,8 @@ export default function JournalForm({
                     />
                 </div>
 
+                {/* New form section ***************************** */}
                 <div className="flex-section">
-
-
                     <label>Notes</label>
                     <textarea
                         type="text"
@@ -202,8 +203,12 @@ export default function JournalForm({
                     <input
                         type="file"
                         accept="image/*"
-                        onChange={(e) => setImageFile(e.target.files[0])}
+                        onChange={(e) =>
+                            setImageFile(e.target.files[0] ?? null)}
                     />
+
+                    <ImageUploadPreview file={image_url} />
+
                     <div className="button-row flex-section">
                         <button
                             type="submit"
@@ -221,13 +226,12 @@ export default function JournalForm({
                             </button>
                         )}
                     </div>
-
                 </div>
             </form>
-            <p style={{ color: `orange`, padding: `10px` }}>
+
+            <p style={{ padding: `0 0 0 20px`, color: `white` }}>
                 <small>* required field</small></p>
 
-
-        </div>
+        </div >
     );
 }

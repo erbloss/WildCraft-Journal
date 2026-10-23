@@ -1,6 +1,6 @@
 .journal-card {
     flex: 0 0 min(90vw, 400px);
-    background: white;
+    background: rgb(255, 255, 255);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
@@ -51,6 +51,7 @@
     overflow-y: hidden;
     padding: 1rem 0;
     scroll-behavior: smooth;
+    scale: 80%;
 }
 
 .journal-grid::-webkit-scrollbar {

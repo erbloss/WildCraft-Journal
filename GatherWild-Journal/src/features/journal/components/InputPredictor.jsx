@@ -60,6 +60,7 @@ export default function InputPredictor({
                 onChange={handleChange}
                 placeholder="What did you find?"
                 autoComplete="off"
+                required
             />
 
             {showSuggestions && suggestions.length > 0 && (
