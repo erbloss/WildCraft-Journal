@@ -228,6 +228,7 @@ body,
 
 .white-backer {
     background-color: white;
+    opacity: 80%;
     border-radius: 10px;
     padding: 20px;
 }
@@ -245,4 +246,66 @@ body,
     max-width: 400px;
     justify-content: center;
     align-items: center;
+}
+
+.alert {
+    color: red;
+    font-weight: bold;
+    font-family: "Quickssand";
+    text-transform: uppercase;
+}
+
+/* WEATHER ------------ */
+.weather-form {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.weather-form input {
+    flex: 1;
+    min-width: 100px;
+    margin: 0;
+    border: 1px solid #ccc;
+}
+
+.weather-form button {
+    min-width: 40px;
+    margin: 0;
+}
+
+.weather-sky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.weather-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+.weather-location {
+    color: #0A400C;
+    text-align: center;
+}
+/* FACTS ------------ */
+.fact-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.fact-name {
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+.fact-scientific {
+    margin-top: 0;
+    color: #596556;
 }

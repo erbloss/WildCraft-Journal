@@ -2,14 +2,31 @@
     min-height: 100vh;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.left-column {
+    width: 250px;
+    min-height: 100vh;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.left-column-content h2 {
+    color: #CA7842;
 }
 
 .page-content {
     flex: 1;
+    min-width: 0;
+    /* allow shrinking so inner scroll areas (journal-grid) scroll instead of widening the page */
     background-image: url('../assets/textures/Texturelabs_Atmosphere_207XL.jpg');
     background-size: cover;
     background-position: center;
+    box-sizing: border-box;
+    padding: .5rem;
 }
 
 .background-wrap {
@@ -107,5 +124,6 @@
     height: 3rem;
     bottom: 0;
     left: 0;
+
     padding: 10px 0;
 }

@@ -1,11 +1,11 @@
 .journal-card {
-    flex: 0 0 min(90vw, 400px);
+    flex: 0 0 min(80vw, 320px);
     background: rgb(255, 255, 255);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
     transition: transform .2s;
-    margin: 15px;
+    margin: 0px 10px;
 }
 
 .journal-card:hover {
@@ -49,9 +49,8 @@
     gap: 1.5rem;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 1rem 0;
+    padding: 1rem;
     scroll-behavior: smooth;
-    scale: 80%;
 }
 
 .journal-grid::-webkit-scrollbar {
@@ -86,7 +85,7 @@ form {
     height: 30px;
     width: 250px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 .journal-form {
@@ -104,4 +103,33 @@ form {
 .lat-long-input {
     width: 45%;
     height: 35px;
+}
+
+.journal-sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 0 20px 0.5rem 0;
+    max-width: 200px;
+    margin-left: auto;
+}
+
+.journal-sort select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid white;
+    opacity: 70%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 480px) {
+    .journal-sort {
+        justify-content: space-between;
+    }
+
+    .journal-sort select {
+        max-width: 65%;
+    }
 }

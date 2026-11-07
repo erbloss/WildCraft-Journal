@@ -8,6 +8,7 @@ import Footer from "../../components/layout/Footer.jsx";
 export default function SignupPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordRetyped, setPasswordRetyped] = useState("");
 
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
@@ -19,18 +20,25 @@ export default function SignupPage() {
         setMessage("");
         setLoading(true);
 
-        const { error } = await signUp(email, password);
+        if (password === passwordRetyped) {
+            const { error } = await signUp(email, password);
 
-        setLoading(false);
+            setLoading(false);
 
-        if (error) {
-            setMessage(`Error: ${error.message}`);
-        } else {
-            alert("Sign-up successful!");
+            if (error) {
+                setMessage(`Error: ${error.message}`);
+            } else {
+                alert("Sign-up successful!");
 
-            // go to login page upon successful submission
-            navigate("/login", { replace: true });
+                // go to login page upon successful submission
+                navigate("/login", { replace: true });
+            }
         }
+        else {
+            setMessage("INVALID: Passwords do not match");
+            setLoading(false);
+        }
+
     }
 
     return (
@@ -63,7 +71,6 @@ export default function SignupPage() {
                                 id="password"
                                 type="password"
                                 className="form-control"
-                                placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
@@ -73,12 +80,11 @@ export default function SignupPage() {
                         <div className="flex-section">
                             <label htmlFor="password">Retype Password</label>
                             <input
-                                id="password"
+                                id="passwordRetyped"
                                 type="password"
                                 className="form-control"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                value={passwordRetyped}
+                                onChange={(e) => setPasswordRetyped(e.target.value)}
                                 required
                             />
 
@@ -100,7 +106,7 @@ export default function SignupPage() {
 
                 {
                     message && (
-                        <div className={`alert mt-3 ${message.startsWith("Error") ? "alert-danger" : "alert-success"}`}>
+                        <div className={`alert text-centered ${message.startsWith("Error") ? "alert-danger" : "alert-success"}`}>
                             {message}
                         </div>
                     )

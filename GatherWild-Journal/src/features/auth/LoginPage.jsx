@@ -83,7 +83,7 @@ export default function LoginPage() {
                 </p>
 
                 {message && (
-                    <div className={`alert mt-3 ${message.startsWith("Error") ? "alert-danger" : "alert-success"}`}>
+                    <div className={`alert text-centered ${message.startsWith("Error") ? "alert-danger" : "alert-success"}`}>
                         {message}
                     </div>
                 )}

@@ -17,6 +17,7 @@ export default function HomePage() {
                     <p>
                         Exciting new features coming soon! Look for our map interface and fun facts about the plants you've discovered in the future.
                     </p>
+
                     <p>
                         <strong>
                             Happy foraging, wanderer!
